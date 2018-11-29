@@ -1,0 +1,41 @@
+//----------------------------------------------------------------------------
+//Pixel Shader
+//----------------------------------------------------------------------------
+
+Texture2D txDiffuse : register(t0);
+SamplerState samLinear : register(s0);
+
+cbuffer CBuffCommon : register(b0)
+{
+	matrix mtxProj;
+	matrix mtxView;
+};
+
+cbuffer CBuffMesh : register(b1)
+{
+	matrix mtxWorld;
+	float4 Diffuse;
+};
+
+struct PS_INPUT
+{
+	float4 Pos : SV_POSITION;
+	float2 Tex : TEXCOORD;
+};
+
+struct PS_OUTPUT
+{
+	float4 color : SV_Target;
+};
+
+PS_OUTPUT psMain(PS_INPUT input)
+{
+	float4 tex = txDiffuse.Sample(samLinear, input.Tex);
+
+	//if(tex.a <= 0.0) discard;
+	clip(tex.a - 0.0001);
+
+	PS_OUTPUT o;
+	o.color = tex * Diffuse;
+	return o;
+}

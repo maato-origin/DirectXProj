@@ -1,0 +1,12 @@
+﻿  compilation object save succeeded; see C:\Users\t-khm\OneDrive\デスクトップ\DirectXProj\data\pshader.cso
+  compilation object save succeeded; see C:\Users\t-khm\OneDrive\デスクトップ\DirectXProj\data\vshader.cso
+  controller.cpp
+  DDSTextureLoader.cpp
+  WICTextureLoader.cpp
+  graphics.cpp
+  utility.cpp
+  winmain.cpp
+  コード生成しています。
+  All 781 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  コード生成が終了しました。
+  DirectXProj.vcxproj -> C:\Users\t-khm\OneDrive\デスクトップ\DirectXProj\Release\DirectXProj.exe
